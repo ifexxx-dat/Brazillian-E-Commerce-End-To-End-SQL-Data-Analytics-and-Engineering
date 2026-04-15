@@ -8,18 +8,20 @@ Technical Stack
 * Database: MySQL Workbench 8.0
 * Language: SQL (Intermediate to Advanced)
 * Techniques: CTEs, Window Functions, Data Ingestion, Relational Schema Design, Data Cleaning.
-Challenges & "Building in Public" (The Hurdles)
+  
+Challenges & Building in Public (The Hurdles)
 Every project has its Plan A that fails. Here is how I navigated mine:
+
 1. The Import Wizard Bottleneck
 * The Issue: Initially, I used the MySQL Table Data Import Wizard. For 100k+ rows, the wizard was incredibly slow, causing frequent timeouts and freezing my system.
 * The Solution: I pivoted to a programmatic approach using LOAD DATA LOCAL INFILE. This allowed me to bulk-load data in seconds rather than hours.
   
 2. The Security & Permission Rabbit Hole
 * The Error: I encountered Error 2068 and Error 3948 (Loading local data is disabled).
-* The Fix: I had to modify the global variables (SET GLOBAL local_infile = 1;) and configure the Advanced Connection Settings in MySQL Workbench (OPT_LOCAL_INFILE=1). This taught me how to handle server-side security protocols—a vital skill for any Database Administrator.
+* The Fix: I had to modify the global variables (SET GLOBAL local_infile = 1;) and configure the Advanced Connection Settings in MySQL Workbench (OPT_LOCAL_INFILE=1). This taught me how to handle security protocols a vital skill for any Database Administrator.
   
 3. Rusty to Ready
-* The Reflection: Having spent time with other data tools, I initially felt "syntax rust" with SQL. However, by building this in public and tackling real-world errors, the logic of JOINS, CTEs, and Window Functions returned quickly. I am committed to mastering SQL one project at a time.
+* The Reflection: Having spent time with other data tools, I initially felt syntax rust with SQL. However, by building this in public and tackling real-world errors, the logic of JOINS, CTEs, and Window Functions returned quickly. I am committed to mastering SQL one project at a time.
   
 Database Schema
 
